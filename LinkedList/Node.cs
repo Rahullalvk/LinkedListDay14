@@ -6,16 +6,15 @@ using System.Threading.Tasks;
 
 namespace LinkedList
 {
-    public class Node
+    public class Node<T> where T : IComparable<T>
     {
-        public int Data;
-        public Node Next;
+        public T Data;
+        public Node<T> Next;
 
-        public Node(int data)
+        public Node(T data)
         {
             Data = data;
             Next = null;
         }
     }
-
 }

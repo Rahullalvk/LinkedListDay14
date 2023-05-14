@@ -5,18 +5,18 @@
     {
         public static void Main(string[] args)
         {
-            LinkedList linkedList = new LinkedList();
 
-            linkedList.Add(70);
-            linkedList.Add(56);
-            linkedList.Add(30);
-            linkedList.Add(40);
+            SortedLinkedList<int> sortedList = new SortedLinkedList<int>();
 
-            linkedList.Delete(40);
+            sortedList.Add(56);
+            sortedList.Add(30);
+            sortedList.Add(40);
+            sortedList.Add(70);
 
-            linkedList.Display();
-            Console.WriteLine($"Size of LinkedList: {linkedList.Size()}");
+            sortedList.Display();
         }
+
+
     }
 }
 

@@ -10,6 +10,7 @@ namespace LinkedList
     public class LinkedList
     {
         public Node Head;
+        public Node Tail;
 
         public void Add(int data)
         {
@@ -18,6 +19,7 @@ namespace LinkedList
             if (Head == null)
             {
                 Head = newNode;
+                Tail = newNode;
             }
             else
             {
@@ -43,17 +45,26 @@ namespace LinkedList
             }
         }
 
-        public void Pop()
+        public void PopLast()
         {
             if (Head == null)
             {
                 Console.WriteLine("The linked list is empty.");
             }
+            else if (Head == Tail)
+            {
+                Head = null;
+                Tail = null;
+            }
             else
             {
-                Node temp = Head;
-                Head = Head.Next;
-                temp.Next = null;
+                Node current = Head;
+                while (current.Next != Tail)
+                {
+                    current = current.Next;
+                }
+                current.Next = null;
+                Tail = current;
             }
         }
 
@@ -68,6 +79,5 @@ namespace LinkedList
             Console.WriteLine("null");
         }
     }
+
 }
-
-

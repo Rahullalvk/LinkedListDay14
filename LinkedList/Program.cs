@@ -11,7 +11,7 @@
             linkedList.Add(56);
             linkedList.Add(30);
 
-            linkedList.Pop();
+            linkedList.PopLast();
 
             linkedList.Display();
         }

@@ -10,11 +10,14 @@
             linkedList.Add(70);
             linkedList.Add(56);
             linkedList.Add(30);
+            linkedList.Add(40);
 
-            linkedList.InsertAfter(30, 40);
+            linkedList.Delete(40);
 
             linkedList.Display();
+            Console.WriteLine($"Size of LinkedList: {linkedList.Size()}");
         }
     }
 }
+
     

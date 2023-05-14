@@ -49,18 +49,52 @@ namespace LinkedList
             }
         }
 
-        public Node Search(int key)
+        public void Delete(int key)
         {
-            Node current = Head;
-            while (current != null)
+            if (Head == null)
             {
-                if (current.Data == key)
+                Console.WriteLine("The linked list is empty.");
+                return;
+            }
+
+            if (Head.Data == key)
+            {
+                Head = Head.Next;
+                if (Head == null)
                 {
-                    return current;
+                    Tail = null;
+                }
+                return;
+            }
+
+            Node current = Head;
+            while (current.Next != null)
+            {
+                if (current.Next.Data == key)
+                {
+                    current.Next = current.Next.Next;
+                    if (current.Next == null)
+                    {
+                        Tail = current;
+                    }
+                    return;
                 }
                 current = current.Next;
             }
-            return null;
+
+            Console.WriteLine($"Node with key value {key} not found.");
+        }
+
+        public int Size()
+        {
+            int count = 0;
+            Node current = Head;
+            while (current != null)
+            {
+                count++;
+                current = current.Next;
+            }
+            return count;
         }
 
         public void Display()
@@ -74,7 +108,6 @@ namespace LinkedList
             Console.WriteLine("null");
         }
     }
-
 }
 
 

@@ -11,7 +11,15 @@
             linkedList.Add(56);
             linkedList.Add(30);
 
-            linkedList.PopLast();
+            Node result = linkedList.Search(30);
+            if (result != null)
+            {
+                Console.WriteLine("Node with value 30 found.");
+            }
+            else
+            {
+                Console.WriteLine("Node with value 30 not found.");
+            }
 
             linkedList.Display();
         }

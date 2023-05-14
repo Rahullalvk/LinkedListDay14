@@ -39,33 +39,28 @@ namespace LinkedList
                 {
                     newNode.Next = current.Next;
                     current.Next = newNode;
+                    if (current == Tail)
+                    {
+                        Tail = newNode;
+                    }
                     break;
                 }
                 current = current.Next;
             }
         }
 
-        public void PopLast()
+        public Node Search(int key)
         {
-            if (Head == null)
+            Node current = Head;
+            while (current != null)
             {
-                Console.WriteLine("The linked list is empty.");
-            }
-            else if (Head == Tail)
-            {
-                Head = null;
-                Tail = null;
-            }
-            else
-            {
-                Node current = Head;
-                while (current.Next != Tail)
+                if (current.Data == key)
                 {
-                    current = current.Next;
+                    return current;
                 }
-                current.Next = null;
-                Tail = current;
+                current = current.Next;
             }
+            return null;
         }
 
         public void Display()
@@ -79,5 +74,6 @@ namespace LinkedList
             Console.WriteLine("null");
         }
     }
-
 }
+    
+

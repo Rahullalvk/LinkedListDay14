@@ -1,18 +1,20 @@
-﻿namespace LinkedList 
+﻿namespace LinkedList
 {
-   
-            public class Program
+
+    public class Program
+    {
+        public static void Main(string[] args)
         {
-            public static void Main(string[] args)
-            {
-                LinkedList linkedList = new LinkedList();
+            LinkedList linkedList = new LinkedList();
 
-                linkedList.Add(56);
-                linkedList.Add(30);
-                linkedList.Add(70);
+            linkedList.Add(70);
+            linkedList.Add(56);
+            linkedList.Add(30);
 
-                linkedList.Display();
-            }
-       }
+            linkedList.Pop();
+
+            linkedList.Display();
+        }
+    }
 }
     

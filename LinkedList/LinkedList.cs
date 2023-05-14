@@ -9,7 +9,7 @@ namespace LinkedList
 
     public class LinkedList
     {
-       public Node Head;
+        public Node Head;
 
         public void Add(int data)
         {
@@ -43,6 +43,20 @@ namespace LinkedList
             }
         }
 
+        public void Pop()
+        {
+            if (Head == null)
+            {
+                Console.WriteLine("The linked list is empty.");
+            }
+            else
+            {
+                Node temp = Head;
+                Head = Head.Next;
+                temp.Next = null;
+            }
+        }
+
         public void Display()
         {
             Node current = Head;
@@ -51,6 +65,7 @@ namespace LinkedList
                 Console.Write(current.Data + "->");
                 current = current.Next;
             }
+            Console.WriteLine("null");
         }
     }
 }

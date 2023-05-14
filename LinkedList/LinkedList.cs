@@ -21,12 +21,8 @@ namespace LinkedList
             }
             else
             {
-                Node current = Head;
-                while (current.Next != null)
-                {
-                    current = current.Next;
-                }
-                current.Next = newNode;
+                newNode.Next = Head;
+                Head = newNode;
             }
         }
 
@@ -35,11 +31,12 @@ namespace LinkedList
             Node current = Head;
             while (current != null)
             {
-                Console.Write(current.Data + " ");
+                Console.Write(current.Data + "->");
                 current = current.Next;
             }
-            Console.WriteLine();
+            Console.WriteLine("null");
         }
     }
-
 }
+
+

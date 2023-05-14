@@ -9,7 +9,7 @@ namespace LinkedList
 
     public class LinkedList
     {
-        public Node Head;
+       public Node Head;
 
         public void Add(int data)
         {
@@ -26,6 +26,23 @@ namespace LinkedList
             }
         }
 
+        public void InsertAfter(int key, int data)
+        {
+            Node newNode = new Node(data);
+
+            Node current = Head;
+            while (current != null)
+            {
+                if (current.Data == key)
+                {
+                    newNode.Next = current.Next;
+                    current.Next = newNode;
+                    break;
+                }
+                current = current.Next;
+            }
+        }
+
         public void Display()
         {
             Node current = Head;
@@ -34,7 +51,6 @@ namespace LinkedList
                 Console.Write(current.Data + "->");
                 current = current.Next;
             }
-            Console.WriteLine("null");
         }
     }
 }
